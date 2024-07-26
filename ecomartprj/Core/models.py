@@ -65,6 +65,8 @@ class Enchere(models.Model):
 class Declaration(models.Model):
     nomcomplet = models.CharField(max_length=128, )
     tel = models.CharField(max_length=128, )
+    livraison = models.BooleanField(blank=True, null=True,)
+    adresse = models.CharField(max_length=128, blank=True, null=True,)
     prix = models.FloatField()
     date = models.DateField()
     enchere = models.ForeignKey(Enchere, on_delete=models.CASCADE, related_name='declarations')
