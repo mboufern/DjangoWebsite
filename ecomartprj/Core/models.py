@@ -17,6 +17,13 @@ class Qualite(models.Model):
 
     def __str__(self):
         return self.name
+
+class Reduction(models.Model):
+    nom = models.CharField(max_length=128)
+    pourcentage = models.IntegerField()
+
+    def __str__(self):
+        return self.name
     
 class Tableau(models.Model):
     class Etat(models.TextChoices):
@@ -37,8 +44,14 @@ class Tableau(models.Model):
     def __str__(self):
         return self.titre
     
+class Image(models.Model):
+    tableau = models.ForeignKey(Tableau, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='tableau_images/', null=True)
+    description = models.TextField(blank=True)
+    
 class Canvas(models.Model):
     emplacement = models.FloatField(blank=True, null=True)
+    image = models.ImageField(upload_to='textures/', null=True)
     largeur = models.SmallIntegerField()
     hauteur = models.SmallIntegerField()
     tableau = models.ForeignKey(Tableau, on_delete=models.CASCADE, related_name='canvases')
