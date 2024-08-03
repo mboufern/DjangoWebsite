@@ -1,0 +1,25 @@
+*{
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.aactive{
+    color: black;
+    font-weight: bold;
+    // backdrop-filter: ;
+}
+
+.special-font{
+    font-family: "Pinyon Script", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.glass{
+    background: linear-gradient(3deg, rgba(255, 255, 255, 0.3), rgba(75, 75, 75, 0.3));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -5px 25px 0 rgba(0, 0, 0, 0.37);
+}
