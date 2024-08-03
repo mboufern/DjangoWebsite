@@ -42,7 +42,6 @@ export class ThreeRendererComponent implements OnInit {
     this.camera = new THREE.PerspectiveCamera(18, this.canvasContainer.nativeElement.offsetWidth / this.canvasContainer.nativeElement.offsetHeight, 0.1, 1000);
     this.camera.position.z = 5;
 
-
     // Set up the renderer
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(this.canvasContainer.nativeElement.offsetWidth, this.canvasContainer.nativeElement.offsetHeight);
@@ -51,8 +50,8 @@ export class ThreeRendererComponent implements OnInit {
     //controller
     if(this.welcome)
     {
-      console.log(this.canvasContainer.nativeElement.offsetWidth/3840);
-      this.camera.position.x = -(this.canvasContainer.nativeElement.offsetWidth / 3840);
+      console.log(this.canvasContainer.nativeElement.offsetWidth/2000);
+      this.camera.position.x = -(this.canvasContainer.nativeElement.offsetWidth / 2000);
     }
     else
     {
@@ -76,12 +75,15 @@ export class ThreeRendererComponent implements OnInit {
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     //light
-    const globalLight = new THREE.AmbientLight(0xffffff, 2)
+    const globalLight = new THREE.AmbientLight(0xffffff, 2.5)
     this.scene.add(globalLight)
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(50, 50, 50);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(5, 5, 5);
     directionalLight.castShadow = true;
+    directionalLight.shadow.mapSize.width = 2440;
+    directionalLight.shadow.mapSize.height = 2440;
     this.scene.add(directionalLight);
+    
     
     // Load the texture
     const textureLoader = new THREE.TextureLoader();
@@ -89,7 +91,7 @@ export class ThreeRendererComponent implements OnInit {
 
     textureLoader.load(textureToLoad, (texture) => {
       const geometry = new THREE.BoxGeometry(this.width, this.height, 0.04);
-      const material = new THREE.MeshStandardMaterial({ map: texture });
+      const material = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.4 });
       this.cube = new THREE.Mesh(geometry, material);
       this.cube.castShadow = true;
       this.scene.add(this.cube);
@@ -98,10 +100,10 @@ export class ThreeRendererComponent implements OnInit {
       this.animate();
     });
 
-    const geometry = new THREE.BoxGeometry(100, 100, 0.04);
-    const material = new THREE.MeshStandardMaterial({ colorWrite: true });
+    const geometry = new THREE.BoxGeometry(100, 100, 0.02);
+    const material = new THREE.MeshStandardMaterial({ color: 0xFFEBD5, roughness: 1 });
     this.plane = new THREE.Mesh(geometry, material);
-    this.plane.position.z = -0.1;
+    this.plane.position.z = -0.06;
     this.plane.receiveShadow = true;
     this.scene.add(this.plane);
 
@@ -110,7 +112,7 @@ export class ThreeRendererComponent implements OnInit {
   private animate(): void {
     requestAnimationFrame(() => this.animate());
 
-    const rotationSpeed = -0.1; // Adjust for desired sensitivity
+    const rotationSpeed = 0.1; // Adjust for desired sensitivity
     this.cube.rotation.y = this.cursorX * Math.PI * rotationSpeed;
     this.plane.rotation.y = this.cursorX * Math.PI * rotationSpeed;
 

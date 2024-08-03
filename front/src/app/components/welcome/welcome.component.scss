@@ -1,0 +1,84 @@
+.text{
+    z-index: 10;
+    height: 100vh;
+    padding: 7vh;
+    padding-top: 30vh;
+    background: linear-gradient(90deg, rgba(39, 40, 41, 0.4), rgba(255, 255, 255, 0));
+}
+
+h1{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+h3{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+h2{
+    font-family: "Lato", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+button{
+    color: rgb(5, 39, 52);
+    border: none;
+    border-radius: 55px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 20px -5px rgba(0, 0, 0, 0.37);
+    width: fit-content;
+}
+
+/* Tablets and Large Phones */
+@media only screen and (max-width: 767px) {
+/* Styles for tablets and large phones */
+    button{
+        color: rgb(255, 255, 255);
+        box-shadow: 0 -2px 20px -5px rgba(255, 255, 255, 0.37);
+        align-self: center;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+    h2, h3{
+        font-size: 2rem;
+    }
+
+    .text{
+        color: white;
+        z-index: 10;
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+        padding-top: 60vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(46, 46, 46, 0));
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* Styles for tablets */
+    h1{
+        font-size: 4rem;
+        text-shadow: 5px  white;
+    }
+    h2, h3{
+        font-size: 2rem;
+    }
+}
+
+/* Laptops and Desktops */
+@media only screen and (min-width: 992px){
+/* Styles for laptops and desktops */
+    h1{
+        font-size: 6rem;
+    }
+    h2, h3{
+        font-size: 4rem;
+    }
+}

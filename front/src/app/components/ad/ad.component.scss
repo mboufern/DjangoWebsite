@@ -1,0 +1,18 @@
+.container
+{
+    margin: auto;
+    width: 50%;
+}
+
+.item{
+    padding: 17px;
+    border-radius: 50px;
+}
+
+.selected{
+    color: white;
+    background: #00b09b;
+    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+    background: linear-gradient(to right, #96c93d, #00b09b);
+
+}
