@@ -1,14 +1,14 @@
-<div class="p-5" style="height: 50vh;">
-    <div class="my-5 d-flex container">
-        <div>
-            <h4 class="item selected">Des tableau unique a votre disposition</h4>
-            <h4 class="item">Toile et painture de superbe qualite</h4>
-            <h4 class="item">Atelier ouvert pour vos commisions</h4>
+<div class="py-5 d-flex">
+    <div class="my-3 d-flex container">
+        <div class="items">
+            <h4 class="item" [ngClass]="{'selected': image==0}" (click)="setImage(0)">Tableaux uniques à votre disposition</h4>
+            <h4 class="item" [ngClass]="{'selected': image==1}" (click)="setImage(1)">Toile et painture de superbe qualité</h4>
+            <h4 class="item" [ngClass]="{'selected': image==2}" (click)="setImage(2)">Atelier ouvert pour vos commisions</h4>
         </div>
-        <div>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+        <div class="imgs">
+                <img [ngClass]="{'notvis': image!=0}" src="assets/texture1.png" alt="">
+                <img [ngClass]="{'notvis': image!=1}" src="assets/texture.png" alt="">
+                <img [ngClass]="{'notvis': image!=2}" src="" alt="">
         </div>
     </div>
 </div>

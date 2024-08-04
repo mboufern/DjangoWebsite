@@ -1,12 +1,17 @@
 .container
 {
     margin: auto;
-    width: 50%;
+    height: 50vh;
 }
 
 .item{
+    margin-bottom: 25px;
     padding: 17px;
     border-radius: 50px;
+    width: fit-content;
+    align-self: center;
+    transition: color 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .selected{
@@ -14,5 +19,61 @@
     background: #00b09b;
     background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
     background: linear-gradient(to right, #96c93d, #00b09b);
+}
+
+.items{
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgs{
+    position: relative;
+    padding-left: 10px;
+    width: 50%;
+}
+
+img{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.notvis{
+    opacity: 0;
+}
+
+/* Tablets and Large Phones */
+@media only screen and (max-width: 767px) {
+/* Styles for tablets and large phones */
+    .item{
+        padding: 7px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+    }
+    .container
+    {
+        margin: auto;
+        height: auto;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+/* Styles for tablets */
+    .item{
+        padding: 10px;
+        border-radius: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Laptops and Desktops */
+@media only screen and (min-width: 992px){
+/* Styles for laptops and desktops */
 
 }

@@ -1,7 +1,8 @@
 // src/app/three-renderer/three-renderer.component.ts
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -10,6 +11,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   styleUrls: ['./three-renderer.component.scss']
 })
 export class ThreeRendererComponent implements OnInit {
+
   @ViewChild('canvasContainer', { static: true }) canvasContainer!: ElementRef;
   @Input() textureUrl: string = '';
   @Input() width: number = 1;
@@ -28,10 +30,17 @@ export class ThreeRendererComponent implements OnInit {
   cursorX = 0;
   cursorY = 0;
 
-  constructor() {}
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit(): void {
-    this.initThreeJS();
+    if (this.isBrowser) {
+      // Code that should only run in the browser
+      this.initThreeJS();
+    }
   }
 
   private initThreeJS(): void {
