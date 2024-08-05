@@ -1,0 +1,28 @@
+<div class="contain d-flex flex-column">
+    <div class="options">
+        <mat-chip-listbox #categoriesListbox multiple (selectionChange)="filterByCategories($event)">
+            @for (category of categories; track $index) {
+                <mat-chip-option [value]="category.id">{{category.name}}</mat-chip-option>
+            }
+        </mat-chip-listbox>
+        
+        <mat-chip-listbox #couleursListbox multiple (selectionChange)="filterByCouleurs($event)">
+            @for (couleur of couleurs; track $index) {
+                <mat-chip-option [value]="couleur.id">{{couleur.name}}</mat-chip-option>
+            }
+        </mat-chip-listbox>
+        
+        <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+            @for (qualite of qualites; track $index) {
+                <mat-chip-option [value]="qualite.id">{{qualite.name}}</mat-chip-option>
+            }
+        </mat-chip-listbox>
+    </div>
+    <div class="d-flex gri">
+        @for (tableau of filteredTableaux; track $index) {
+            <div>
+                {{tableau.title}}
+            </div>
+        }
+    </div>
+</div>

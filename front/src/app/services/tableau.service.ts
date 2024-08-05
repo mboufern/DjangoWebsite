@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TableauService {
   private apiUrl = 'http://localhost:8000/api/tableaux/';
@@ -19,15 +20,28 @@ export class TableauService {
     return this.http.get<any>(`${this.apiUrl}${id}/`);
   }
 
-  createTableau(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, data);
+  // createTableau(data: any): Observable<any> {
+  //   return this.http.post<any>(this.apiUrl, data);
+  // }
+
+  // updateTableau(id: number, data: any): Observable<any> {
+  //   return this.http.put<any>(`${this.apiUrl}${id}/`, data);
+  // }
+
+  // deleteTableau(id: number): Observable<any> {
+  //   return this.http.delete<any>(`${this.apiUrl}${id}/`);
+  // }
+
+  getCategories(): Observable<any> {
+    return this.http.get<any>('/api/categories/');
   }
 
-  updateTableau(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${id}/`, data);
+  getCouleurs(): Observable<any> {
+    return this.http.get<any>('/api/couleurs/');
   }
 
-  deleteTableau(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}${id}/`);
+  getQualites(): Observable<any> {
+    return this.http.get<any>('/api/qualites/');
   }
+
 }
