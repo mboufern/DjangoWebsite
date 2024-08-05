@@ -1,5 +1,5 @@
 .contain{
-    padding: 10px;
+    padding: 20px;
     margin: 0;
     width: 100%;
     background: #d9a7c7;  /* fallback for old browsers */
@@ -8,9 +8,11 @@
 }
 
 .options{
-
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
 }
 
 .gri{
-
+    min-height: 500px;
 }

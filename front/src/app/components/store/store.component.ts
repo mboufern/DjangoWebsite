@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { TableauService } from '../../services/tableau.service';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-store',
   standalone: true,
-  imports: [MatChipsModule],
+  imports: [MatChipsModule, MatExpansionModule],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })
