@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { MatInput } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { TableauService } from '../../services/tableau.service';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {BrowserModule} from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {JsonPipe} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {CdkListbox, CdkOption} from '@angular/cdk/listbox';
 
 @Component({
   selector: 'app-store',
   standalone: true,
-  imports: [MatChipsModule, MatExpansionModule],
+  imports: [MatInput, MatChipsModule, MatExpansionModule, CdkListbox, FormsModule, CdkOption, JsonPipe],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })

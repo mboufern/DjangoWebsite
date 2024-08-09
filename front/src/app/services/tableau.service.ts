@@ -7,17 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TableauService {
-  private apiUrl = 'http://localhost:8000/api/tableaux/';
+  private apiUrl = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) {}
 
   getTableaux(page: number = 1): Observable<any> {
     const params = new HttpParams().set('page', page.toString());
-    return this.http.get<any>(this.apiUrl, { params });
+    return this.http.get<any>(this.apiUrl + '/tableaux/', { params });
   }
 
   getTableau(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${id}/`);
+    return this.http.get<any>(`${this.apiUrl}/tableaux/${id}/`);
   }
 
   // createTableau(data: any): Observable<any> {
@@ -33,15 +33,15 @@ export class TableauService {
   // }
 
   getCategories(): Observable<any> {
-    return this.http.get<any>('/api/categories/');
+    return this.http.get<any>(this.apiUrl+'/categories/');
   }
 
   getCouleurs(): Observable<any> {
-    return this.http.get<any>('/api/couleurs/');
+    return this.http.get<any>(this.apiUrl+'/couleurs/');
   }
 
   getQualites(): Observable<any> {
-    return this.http.get<any>('/api/qualites/');
+    return this.http.get<any>(this.apiUrl+'/qualites/');
   }
 
 }

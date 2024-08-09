@@ -1,9 +1,9 @@
 <div class="py-5 d-flex">
     <div class="my-3 d-flex container">
         <div class="items">
-            <h4 class="item" [ngClass]="{'selected': image==0}" (click)="setImage(0)">Tableaux uniques à votre disposition</h4>
-            <h4 class="item" [ngClass]="{'selected': image==1}" (click)="setImage(1)">Toile et painture de superbe qualité</h4>
-            <h4 class="item" [ngClass]="{'selected': image==2}" (click)="setImage(2)">Atelier ouvert pour vos commisions</h4>
+            <h5 class="item" [ngClass]="{'selected': image==0}" (click)="setImage(0)">Tableaux uniques à votre disposition</h5>
+            <h5 class="item" [ngClass]="{'selected': image==1}" (click)="setImage(1)">Toile et painture de superbe qualité</h5>
+            <h5 class="item" [ngClass]="{'selected': image==2}" (click)="setImage(2)">Atelier ouvert pour vos commisions</h5>
         </div>
         <div class="imgs">
                 <img [ngClass]="{'notvis': image!=0}" src="assets/texture1.png" alt="">
