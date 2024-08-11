@@ -4,26 +4,26 @@ class Categorie(models.Model):
     nom = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.nom
 
 class Couleur(models.Model):
     nom = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.nom
 
 class Qualite(models.Model):
     nom = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.nom
 
 class Reduction(models.Model):
     nom = models.CharField(max_length=128)
     pourcentage = models.IntegerField()
 
     def __str__(self):
-        return self.name
+        return self.nom
     
 class Tableau(models.Model):
     class Etat(models.TextChoices):

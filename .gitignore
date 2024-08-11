@@ -1,0 +1,21 @@
+ecomartprj/media/
+
+# Django #
+ecomartprj/*.log
+ecomartprj/*.pot
+ecomartprj/*.pyc
+ecomartprj/__pycache__
+ecomartprj/db.sqlite3
+media
+
+# Backup files # 
+ecomartprj/*.bak 
+
+# Environments 
+ecomartprj/.env 
+ecomartprj/.venv 
+ecomartprj/env/ 
+ecomartprj/venv/ 
+ecomartprj/ENV/ 
+ecomartprj/env.bak/ 
+ecomartprj/venv.bak/ 
