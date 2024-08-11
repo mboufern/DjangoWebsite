@@ -19,6 +19,8 @@ export class StoreComponent {
   categories: any[] = [];
   couleurs: any[] = [];
   qualites: any[] = [];
+  tailles: any[] = [];
+  etats: any[] = [];
   tableaux: any[] = [];
   filteredTableaux: any[] = [];
 
@@ -43,6 +45,8 @@ export class StoreComponent {
         previous: data.previous
       };
     });
+
+    console.log(this.tableaux);
   }
 
   filterByCategories(event: any) {

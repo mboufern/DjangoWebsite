@@ -13,20 +13,9 @@
                     </mat-expansion-panel-header>
     
                     <mat-chip-listbox #categoriesListbox multiple (selectionChange)="filterByCategories($event)">
-                        <!-- <ul cdkListbox
-                            cdkListboxMultiple
-                            cdkListboxOrientation="horizontal"
-                            [(ngModel)]="selectedCategories" class="listbox">
-                            @for (categorie of categories; track categorie) {
-                                <li [cdkOption]="categorie" class="option">{{categorie}}</li>
-                            }
-                            <li [cdkOption]="1" class="option">ccc1</li>
-                            <li [cdkOption]="2" class="option">ccc2</li>
-                        </ul> -->
-                        <mat-chip-option selected>Categorie 1</mat-chip-option>
-                        <mat-chip-option>Categorie 2</mat-chip-option>
-                        <mat-chip-option>Categorie 2</mat-chip-option>
-                        <mat-chip-option>Categorie 2</mat-chip-option>
+                        @for (category of categories; track $index) {
+                            <mat-chip-option [value]="category.id">{{category.name}}</mat-chip-option>
+                        }
                     </mat-chip-listbox>
                     
                 </mat-expansion-panel>
@@ -34,46 +23,51 @@
                     <mat-expansion-panel-header>
                         <mat-panel-title><span class="material-symbols-outlined">palette</span> Couleur</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p>This is the primary content of the panel.</p>
+
+                    <mat-chip-listbox #couleursListbox multiple (selectionChange)="filterByCouleurs($event)">
+                        @for (couleur of couleurs; track $index) {
+                            <mat-chip-option [value]="couleur.id">{{couleur.name}}</mat-chip-option>
+                        }
+                    </mat-chip-listbox>
+
                 </mat-expansion-panel>
                 <mat-expansion-panel hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title><span class="material-symbols-outlined">brush</span> Technique</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p>This is the primary content of the panel.</p>
+
+                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                        @for (qualite of qualites; track $index) {
+                            <mat-chip-option [value]="qualite.id">{{qualite.name}}</mat-chip-option>
+                        }
+                    </mat-chip-listbox>
+
                 </mat-expansion-panel>
                 <mat-expansion-panel hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title><span class="material-symbols-outlined">photo_size_select_small</span> Taille</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p>This is the primary content of the panel.</p>
+
+                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                        @for (taille of tailles; track $index) {
+                            <mat-chip-option [value]="taille.id">{{taille.name}}</mat-chip-option>
+                        }
+                    </mat-chip-listbox>
+
                 </mat-expansion-panel>
                 <mat-expansion-panel hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title><span class="material-symbols-outlined">package_2</span> Disponibilité</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p>This is the primary content of the panel.</p>
+                    
+                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                        @for (etat of etats; track $index) {
+                            <mat-chip-option [value]="etat.id">{{etat.name}}</mat-chip-option>
+                        }
+                    </mat-chip-listbox>
+
                 </mat-expansion-panel>
             </mat-accordion>
-    
-    
-            <mat-chip-listbox #categoriesListbox multiple (selectionChange)="filterByCategories($event)">
-                @for (category of categories; track $index) {
-                    <mat-chip-option [value]="category.id">{{category.name}}</mat-chip-option>
-                }
-            </mat-chip-listbox>
-            
-            <mat-chip-listbox #couleursListbox multiple (selectionChange)="filterByCouleurs($event)">
-                @for (couleur of couleurs; track $index) {
-                    <mat-chip-option [value]="couleur.id">{{couleur.name}}</mat-chip-option>
-                }
-            </mat-chip-listbox>
-            
-            <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
-                @for (qualite of qualites; track $index) {
-                    <mat-chip-option [value]="qualite.id">{{qualite.name}}</mat-chip-option>
-                }
-            </mat-chip-listbox>
         </div>
 
         <div class="btn-group dropdown-center">
