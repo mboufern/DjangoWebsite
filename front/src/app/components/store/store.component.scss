@@ -45,6 +45,12 @@ mat-expansion-panel-header{
 
 //____________________________________________
 
+.tableau{
+    background-color: #3b8d99;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+}
 
 .gri{
     display: flex;
@@ -52,9 +58,12 @@ mat-expansion-panel-header{
     border-radius: 0px 0px 15px 15px;
     background-color: white;
     padding: 10px;
+    padding-top: 40px;
+    align-content: flex-start;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 

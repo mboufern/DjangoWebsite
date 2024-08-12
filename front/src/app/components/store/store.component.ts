@@ -44,9 +44,8 @@ export class StoreComponent {
         next: data.next,
         previous: data.previous
       };
+      console.log(this.tableaux);
     });
-
-    console.log(this.tableaux);
   }
 
   filterByCategories(event: any) {

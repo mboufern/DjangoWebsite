@@ -3,7 +3,7 @@
     <div class="options">
         
         <div class="btn-group dropdown-center">
-            <button class="btn btn btn-outline-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                 <span class="material-symbols-outlined">tune</span> Filtrer
             </button>
             <mat-accordion class="dropdown-menu">
@@ -71,7 +71,7 @@
         </div>
 
         <div class="btn-group dropdown-center">
-            <button class="btn btn btn-outline-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                 <span class="material-symbols-outlined">sort</span> Trier
             </button>
         </div>
@@ -80,12 +80,21 @@
     
     <div class="gri">
         @for (tableau of filteredTableaux; track $index) {
-            <div>
-                {{tableau.title}}
+            <div class="tableau">
+                {{tableau.titre}}
+            </div>
+            <div class="tableau">
+                {{tableau.titre}}
+            </div>
+            <div class="tableau">
+                {{tableau.titre}}
+            </div>
+            <div class="tableau">
+                {{tableau.titre}}
             </div>
         }
-        @if (tableaux == []) {
+        @if (filteredTableaux == []) {
+            <h6><span class="material-symbols-outlined">info</span> Aucun tableau trouvé</h6>
         }
-        <h6><span class="material-symbols-outlined">info</span> Aucun tableau trouvé</h6>
     </div>
 </div>
