@@ -1,100 +1,102 @@
-<div class="contain d-flex flex-column">
-    <h3 style="color: white; margin: 20px auto; font-weight: bold;">La collection complette</h3>
-    <div class="options">
+<div class="contain1 d-flex flex-column">
+    <h2>La collection complette</h2>
+
+    <div class="contain">
+        <div class="options">
+            <div class="btn-group dropdown-center">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <span class="material-symbols-outlined">tune</span> Filtrer
+                </button>
+                <mat-accordion class="dropdown-menu">
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><span class="material-symbols-outlined">interests</span> Categorie</mat-panel-title>
+                        </mat-expansion-panel-header>
         
-        <div class="btn-group dropdown-center">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                <span class="material-symbols-outlined">tune</span> Filtrer
-            </button>
-            <mat-accordion class="dropdown-menu">
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title><span class="material-symbols-outlined">interests</span> Categorie</mat-panel-title>
-                    </mat-expansion-panel-header>
+                        <mat-chip-listbox #categoriesListbox multiple (selectionChange)="filterByCategories($event)">
+                            @for (category of categories; track $index) {
+                                <mat-chip-option [value]="category.id">{{category.name}}</mat-chip-option>
+                            }
+                        </mat-chip-listbox>
+                        
+                    </mat-expansion-panel>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><span class="material-symbols-outlined">palette</span> Couleur</mat-panel-title>
+                        </mat-expansion-panel-header>
     
-                    <mat-chip-listbox #categoriesListbox multiple (selectionChange)="filterByCategories($event)">
-                        @for (category of categories; track $index) {
-                            <mat-chip-option [value]="category.id">{{category.name}}</mat-chip-option>
-                        }
-                    </mat-chip-listbox>
-                    
-                </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title><span class="material-symbols-outlined">palette</span> Couleur</mat-panel-title>
-                    </mat-expansion-panel-header>
-
-                    <mat-chip-listbox #couleursListbox multiple (selectionChange)="filterByCouleurs($event)">
-                        @for (couleur of couleurs; track $index) {
-                            <mat-chip-option [value]="couleur.id">{{couleur.name}}</mat-chip-option>
-                        }
-                    </mat-chip-listbox>
-
-                </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title><span class="material-symbols-outlined">brush</span> Technique</mat-panel-title>
-                    </mat-expansion-panel-header>
-
-                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
-                        @for (qualite of qualites; track $index) {
-                            <mat-chip-option [value]="qualite.id">{{qualite.name}}</mat-chip-option>
-                        }
-                    </mat-chip-listbox>
-
-                </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title><span class="material-symbols-outlined">photo_size_select_small</span> Taille</mat-panel-title>
-                    </mat-expansion-panel-header>
-
-                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
-                        @for (taille of tailles; track $index) {
-                            <mat-chip-option [value]="taille.id">{{taille.name}}</mat-chip-option>
-                        }
-                    </mat-chip-listbox>
-
-                </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title><span class="material-symbols-outlined">package_2</span> Disponibilité</mat-panel-title>
-                    </mat-expansion-panel-header>
-                    
-                    <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
-                        @for (etat of etats; track $index) {
-                            <mat-chip-option [value]="etat.id">{{etat.name}}</mat-chip-option>
-                        }
-                    </mat-chip-listbox>
-
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-
-        <div class="btn-group dropdown-center">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                <span class="material-symbols-outlined">sort</span> Trier
-            </button>
-        </div>
-    </div>
-
+                        <mat-chip-listbox #couleursListbox multiple (selectionChange)="filterByCouleurs($event)">
+                            @for (couleur of couleurs; track $index) {
+                                <mat-chip-option [value]="couleur.id">{{couleur.name}}</mat-chip-option>
+                            }
+                        </mat-chip-listbox>
     
-    <div class="gri">
-        @for (tableau of filteredTableaux; track $index) {
-            <div class="tableau">
-                {{tableau.titre}}
+                    </mat-expansion-panel>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><span class="material-symbols-outlined">brush</span> Technique</mat-panel-title>
+                        </mat-expansion-panel-header>
+    
+                        <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                            @for (qualite of qualites; track $index) {
+                                <mat-chip-option [value]="qualite.id">{{qualite.name}}</mat-chip-option>
+                            }
+                        </mat-chip-listbox>
+    
+                    </mat-expansion-panel>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><span class="material-symbols-outlined">photo_size_select_small</span> Taille</mat-panel-title>
+                        </mat-expansion-panel-header>
+    
+                        <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                            @for (taille of tailles; track $index) {
+                                <mat-chip-option [value]="taille.id">{{taille.name}}</mat-chip-option>
+                            }
+                        </mat-chip-listbox>
+    
+                    </mat-expansion-panel>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><span class="material-symbols-outlined">package_2</span> Disponibilité</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        
+                        <mat-chip-listbox #qualitesListbox multiple (selectionChange)="filterByQualites($event)">
+                            @for (etat of etats; track $index) {
+                                <mat-chip-option [value]="etat.id">{{etat.name}}</mat-chip-option>
+                            }
+                        </mat-chip-listbox>
+    
+                    </mat-expansion-panel>
+                </mat-accordion>
             </div>
-            <div class="tableau">
-                {{tableau.titre}}
+    
+            <div class="btn-group dropdown-center">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <span class="material-symbols-outlined">sort</span> Trier
+                </button>
             </div>
-            <div class="tableau">
-                {{tableau.titre}}
-            </div>
-            <div class="tableau">
-                {{tableau.titre}}
-            </div>
-        }
-        @if (filteredTableaux == []) {
-            <h6><span class="material-symbols-outlined">info</span> Aucun tableau trouvé</h6>
-        }
+        </div>
+    
+        
+        <div class="gri">
+            @for (tableau of filteredTableaux; track $index) {
+                <div class="tableau">
+                    {{tableau.titre}}
+                </div>
+                <div class="tableau">
+                    {{tableau.titre}}
+                </div>
+                <div class="tableau">
+                    {{tableau.titre}}
+                </div>
+                <div class="tableau">
+                    {{tableau.titre}}
+                </div>
+            }
+            @if (filteredTableaux == []) {
+                <h6><span class="material-symbols-outlined">info</span> Aucun tableau trouvé</h6>
+            }
+        </div>
     </div>
 </div>

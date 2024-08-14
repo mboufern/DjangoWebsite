@@ -1,21 +1,32 @@
-.contain{
-    padding: 20px;
+.contain1{
+    padding: 40px;
     margin: 0;
     width: 100%;
+}
+
+.contain{
+    border-radius: 15px;
+    box-shadow: rgba(148, 98, 117, 0.26) 0px -4px 24px;
+}
+
+h2{
+    color: transparent;
+    margin: 40px auto;
+    font-weight: bold;
     background: #aa4b6b;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background-clip: text;
 }
 
 .options{
+    margin: auto;
     display: flex;
     flex-direction: row;
-    border-radius: 15px 15px 0px 0px;
-    background-color: white;
-    padding: 10px;
+    padding: 20px 10px;
     justify-content: center;
     gap: 20px;
+    max-width: 500px;
     // margin-bottom: 10px;
 }
 
@@ -47,16 +58,14 @@ mat-expansion-panel-header{
 
 .tableau{
     background-color: #3b8d99;
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 10px;
 }
 
 .gri{
     display: flex;
     min-height: 500px;
-    border-radius: 0px 0px 15px 15px;
-    background-color: white;
     padding: 10px;
     padding-top: 40px;
     align-content: flex-start;
@@ -73,8 +82,11 @@ span{
 
 @media only screen and (max-width: 767px) {
 /* Styles for tablets and large phones */
-    .contain{
-        padding: 10px;
+    .contain1{
+        padding: 0;
+    }
+    h2{
+        margin: 40px 10px;
     }
 }
 
