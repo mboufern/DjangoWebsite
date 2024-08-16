@@ -31,7 +31,7 @@ export class AdComponent implements OnInit, OnDestroy {
   private startImageRotation() {
     this.intervalId = setInterval(() => {
       this.image = (this.image + 1) % 3;
-    }, 5000);
+    }, 3500);
   }
 
   private clearImageRotation() {

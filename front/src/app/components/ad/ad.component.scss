@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     padding: 100px;
-    background: rgba(255, 255, 255, 0.616);
+    background: rgba(255, 255, 255, 0.57);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -55,13 +55,15 @@ img{
     margin: auto;
     border-radius: 20px;
     height: 340px;
-    transition: filter 0.8s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+    box-shadow: rgba(56, 87, 84, 0.753) 0 0 20px -5px;
+
 }
 
 
 .notvis{
-    -webkit-filter: blur(10px) brightness(80%);
-    filter: blur(10px) brightness(80%);
+    -webkit-filter: blur(10px) brightness(50%);
+    filter: blur(10px) brightness(50%);
 }
 
 /* Tablets and Large Phones */
